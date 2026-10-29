@@ -1,8 +1,7 @@
 # CCTV 《新闻联播》片头动画模拟器与三维视频生成器
 
-<p align="center">
-  <img src="static/earth.jpg" width="120" height="120" style="border-radius: 50%;" alt="Earth Logo" />
-</p>
+<img width="1920" height="1030" alt="QQ截图20261029215806" src="https://github.com/user-attachments/assets/72d83621-9db5-48f2-86ac-a6a9773d1fc9" />
+<img width="1920" height="1030" alt="QQ截图20261029215628" src="https://github.com/user-attachments/assets/5ccdfabb-a805-4561-9da7-ca62a665923c" />
 
 <p align="center">
   <strong>基于 Three.js + WebCodecs 的纯前端经典央视新闻联播片头 3D 模拟、定制与离线 MP4 渲染导出工具</strong>
