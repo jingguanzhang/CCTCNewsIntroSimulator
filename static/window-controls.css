@@ -1,0 +1,122 @@
+/* Shared WebView chrome and button focus rules for both pages. */
+button:focus,
+button:active,
+input[type="button"]:focus,
+input[type="button"]:active,
+input[type="submit"]:focus,
+input[type="submit"]:active,
+input[type="reset"]:focus,
+input[type="reset"]:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* Keep a non-border cue for keyboard users without restoring a focus ring. */
+button:focus-visible,
+input[type="button"]:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="reset"]:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+body > header {
+  padding-right: 0;
+  gap: 8px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}
+body > header nav,
+body > header .top-actions,
+body > header [data-host-no-drag] {
+  -webkit-app-region: no-drag;
+}
+body > header nav,
+body > header .top-actions {
+  margin-left: auto;
+}
+body > header .top-actions {
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+body > header .top-actions::-webkit-scrollbar {
+  display: none;
+}
+body > header .top-actions > * {
+  flex-shrink: 0;
+}
+.window-controls {
+  display: flex;
+  align-items: stretch;
+  align-self: stretch;
+  flex: 0 0 auto;
+  margin-left: 4px;
+  -webkit-app-region: no-drag;
+}
+.window-controls > button {
+  width: 42px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.window-controls > button:hover {
+  background: rgba(130, 140, 154, 0.16);
+  color: var(--text);
+}
+.window-controls > button[data-window-action="close"]:hover,
+.window-controls > button[data-host-action="close"]:hover {
+  background: #c82e3b;
+  color: #fff;
+}
+.window-controls i {
+  font-size: 16px;
+  line-height: 1;
+  pointer-events: none;
+}
+@media (max-width: 1100px) {
+  body > header {
+    gap: 6px;
+    padding-left: 12px;
+  }
+  body > header .top-actions {
+    gap: 3px;
+  }
+  body > header .top-actions button {
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+  .window-controls > button {
+    width: 36px;
+  }
+}
+@media (max-width: 940px) {
+  body > header .top-actions button {
+    min-width: 30px;
+    font-size: 0;
+  }
+  body > header .top-actions button i {
+    font-size: 16px;
+  }
+}
+@media (max-width: 450px) {
+  body > header nav {
+    gap: 4px;
+  }
+  .window-controls {
+    margin-left: 0;
+  }
+  .window-controls > button {
+    width: 29px;
+  }
+}

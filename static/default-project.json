@@ -1,0 +1,2847 @@
+{
+  "version": 3,
+  "name": "新闻片头",
+  "duration": 18.916666666666668,
+  "fps": 24,
+  "aspect": [
+    16,
+    9
+  ],
+  "scene": {
+    "exposure": 1.25,
+    "environment": "studio",
+    "background": null,
+    "lights": [
+      {
+        "type": "ambient",
+        "color": "#a0c5df",
+        "intensity": 1
+      },
+      {
+        "type": "hemisphere",
+        "color": "#c5e4ff",
+        "groundColor": "#55401c",
+        "intensity": 2
+      },
+      {
+        "type": "directional",
+        "color": "#fff2c4",
+        "intensity": 3.5,
+        "position": [
+          -5,
+          7,
+          10
+        ]
+      },
+      {
+        "type": "directional",
+        "color": "#c2eaff",
+        "intensity": 3,
+        "position": [
+          -6,
+          -3,
+          0
+        ]
+      },
+      {
+        "type": "directional",
+        "color": "#ffffff",
+        "intensity": 1.2,
+        "position": [
+          4,
+          3,
+          8
+        ]
+      }
+    ],
+    "backdrop": {
+      "enabled": true,
+      "style": "blue-rays",
+      "colors": {
+        "dark": "#00151e",
+        "blue": "#006692",
+        "light": "#72d9ef"
+      },
+      "base": {
+        "intensity": 1,
+        "rotation": 0,
+        "travel": 0,
+        "centerX": 0.51,
+        "centerY": 0.52,
+        "particles": 0.65
+      },
+      "tracks": {
+        "intensity": [
+          {
+            "time": 0,
+            "value": 0.9,
+            "easing": "linear"
+          },
+          {
+            "time": 5,
+            "value": 1,
+            "easing": "smooth"
+          },
+          {
+            "time": 16.916666666666668,
+            "value": 1,
+            "easing": "linear"
+          },
+          {
+            "time": 18.916666666666668,
+            "value": 1,
+            "easing": "linear"
+          }
+        ],
+        "rotation": [
+          {
+            "time": 0,
+            "value": -12,
+            "easing": "linear"
+          },
+          {
+            "time": 16.916666666666668,
+            "value": 32,
+            "easing": "linear"
+          },
+          {
+            "time": 18.916666666666668,
+            "value": 37.20197044334975,
+            "easing": "linear"
+          }
+        ],
+        "travel": [
+          {
+            "time": 0,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 16.916666666666668,
+            "value": 19,
+            "easing": "linear"
+          },
+          {
+            "time": 18.916666666666668,
+            "value": 21.24630541871921,
+            "easing": "linear"
+          }
+        ]
+      }
+    }
+  },
+  "objects": [
+    {
+      "id": "earth",
+      "name": "地球",
+      "type": "earth",
+      "enabled": true,
+      "in": 0,
+      "out": 18.916666666666668,
+      "base": {
+        "x": 0,
+        "y": 0,
+        "z": -1.7,
+        "rx": 5.729577951308233,
+        "ry": 0,
+        "rz": 3.437746770784939,
+        "sx": 1,
+        "sy": 1,
+        "sz": 1,
+        "opacity": 1,
+        "reveal": 1,
+        "gx": 0,
+        "gy": 0,
+        "gz": 0,
+        "grx": 0,
+        "gry": 0,
+        "grz": 0,
+        "gsx": 1,
+        "gsy": 1,
+        "gsz": 1,
+        "normalSpin": 0,
+        "groupRotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "rotation": [
+          0.01643243496179305,
+          0.966596317936917,
+          0.040817581404762986,
+          -0.25249843223332374
+        ]
+      },
+      "tracks": {
+        "x": [
+          {
+            "time": 0,
+            "value": 3.5366320524868367,
+            "easing": "linear"
+          },
+          {
+            "time": 1,
+            "value": 3.177874420743676,
+            "easing": "linear"
+          },
+          {
+            "time": 3,
+            "value": 0.9601750144339372,
+            "easing": "linear"
+          },
+          {
+            "time": 4.125,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 5,
+            "value": 0,
+            "easing": "linear"
+          }
+        ],
+        "y": [
+          {
+            "time": 0,
+            "value": -4.412063926867445,
+            "easing": "linear"
+          },
+          {
+            "time": 1,
+            "value": -4,
+            "easing": "linear"
+          },
+          {
+            "time": 3,
+            "value": -1.1416300999747409,
+            "easing": "linear"
+          },
+          {
+            "time": 4.125,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 5,
+            "value": 0,
+            "easing": "linear"
+          }
+        ],
+        "sx": [
+          {
+            "time": 0,
+            "value": 7.971,
+            "easing": "linear"
+          },
+          {
+            "time": 1,
+            "value": 7.311,
+            "easing": "linear"
+          },
+          {
+            "time": 3,
+            "value": 6.131,
+            "easing": "linear"
+          },
+          {
+            "time": 4.125,
+            "value": 5,
+            "easing": "linear"
+          },
+          {
+            "time": 5,
+            "value": 4.8,
+            "easing": "smooth"
+          },
+          {
+            "time": 7,
+            "value": 4.8,
+            "easing": "linear"
+          },
+          {
+            "time": 9,
+            "value": 4.8,
+            "easing": "linear"
+          },
+          {
+            "time": 16.916666666666668,
+            "value": 4.8,
+            "easing": "linear"
+          }
+        ],
+        "sy": [
+          {
+            "time": 0,
+            "value": 7.970999999999998,
+            "easing": "linear"
+          },
+          {
+            "time": 1,
+            "value": 7.311000000000001,
+            "easing": "linear"
+          },
+          {
+            "time": 3,
+            "value": 6.130999999999999,
+            "easing": "linear"
+          },
+          {
+            "time": 4.125,
+            "value": 4.999999999999999,
+            "easing": "linear"
+          },
+          {
+            "time": 5,
+            "value": 4.8,
+            "easing": "linear"
+          },
+          {
+            "time": 7,
+            "value": 4.8,
+            "easing": "linear"
+          },
+          {
+            "time": 9,
+            "value": 4.8,
+            "easing": "linear"
+          },
+          {
+            "time": 16.916666666666668,
+            "value": 4.8,
+            "easing": "linear"
+          }
+        ],
+        "sz": [
+          {
+            "time": 0,
+            "value": 7.970999999999998,
+            "easing": "linear"
+          },
+          {
+            "time": 1,
+            "value": 7.311000000000001,
+            "easing": "linear"
+          },
+          {
+            "time": 3,
+            "value": 6.130999999999999,
+            "easing": "linear"
+          },
+          {
+            "time": 4.125,
+            "value": 4.999999999999999,
+            "easing": "linear"
+          },
+          {
+            "time": 5,
+            "value": 4.8,
+            "easing": "linear"
+          },
+          {
+            "time": 7,
+            "value": 4.8,
+            "easing": "linear"
+          },
+          {
+            "time": 9,
+            "value": 4.8,
+            "easing": "linear"
+          },
+          {
+            "time": 16.916666666666668,
+            "value": 4.8,
+            "easing": "linear"
+          }
+        ],
+        "rotation": [
+          {
+            "time": 0,
+            "value": [
+              -0.00035268236810958795,
+              0.9782626913408015,
+              -0.052964616389153056,
+              -0.20049122613358714
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 1,
+            "value": [
+              -0.04987458630016808,
+              0.9856783146885721,
+              -0.08522871370758917,
+              -0.13669986084057678
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 3,
+            "value": [
+              -0.0519429847829309,
+              0.8837894662334972,
+              -0.07622969434043048,
+              -0.4587015799049697
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 4.125,
+            "value": [
+              -0.008071941515437013,
+              0.7776928644177231,
+              0.02005111992351636,
+              -0.6282727154538393
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 5,
+            "value": [
+              -0.019372033080250917,
+              0.6378357381150003,
+              0.00878600874406869,
+              -0.7698786278160861
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 7,
+            "value": [
+              -0.03923560055305736,
+              0.28842541472650385,
+              -0.014331955849333571,
+              -0.9565907917341763
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 9,
+            "value": [
+              -0.0472252361452804,
+              -0.17805521533317653,
+              -0.03888168368698718,
+              -0.9821172700025919
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 10,
+            "value": [
+              -0.0481750475332924,
+              -0.5333798759627034,
+              -0.05611718107455247,
+              -0.8426363003701074
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 11,
+            "value": [
+              -0.057428492791898586,
+              -0.6483811766839391,
+              -0.05525315931774685,
+              -0.7571333477816237
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 12.5,
+            "value": [
+              -0.041116584006655334,
+              -0.9430141043479557,
+              -0.06397355140896105,
+              -0.3239463076507766
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 14,
+            "value": [
+              -0.0387402094270689,
+              -0.9805453208059398,
+              -0.0546631435248205,
+              -0.18450477164319729
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 16.916666666666668,
+            "value": [
+              -0.03719425483312266,
+              -0.986504228371615,
+              -0.053925367210688246,
+              -0.15006015321705352
+            ],
+            "easing": "linear"
+          }
+        ],
+        "z": [
+          {
+            "time": 0,
+            "value": -3.0117315501493525,
+            "easing": "linear"
+          },
+          {
+            "time": 1,
+            "value": -3.011732,
+            "easing": "linear"
+          },
+          {
+            "time": 3,
+            "value": -4.150768,
+            "easing": "linear"
+          },
+          {
+            "time": 4.125,
+            "value": -4.150767512543871,
+            "easing": "linear"
+          }
+        ]
+      },
+      "pivot": {
+        "preset": "custom",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "orbit": {
+        "center": [
+          0,
+          0,
+          0
+        ]
+      },
+      "rotationReference": {
+        "base": {
+          "rx": 5.729577951308233,
+          "ry": 0,
+          "rz": 3.437746770784939,
+          "normalSpin": 0
+        },
+        "tracks": {
+          "rx": [],
+          "ry": [
+            {
+              "time": 0,
+              "value": 209.129595,
+              "easing": "linear"
+            },
+            {
+              "time": 3,
+              "value": 234.912696,
+              "easing": "linear"
+            },
+            {
+              "time": 5,
+              "value": 280.74932,
+              "easing": "linear"
+            },
+            {
+              "time": 7,
+              "value": 326.585943,
+              "easing": "linear"
+            },
+            {
+              "time": 9,
+              "value": 366.692989,
+              "easing": "linear"
+            },
+            {
+              "time": 11,
+              "value": 441.177502,
+              "easing": "linear"
+            },
+            {
+              "time": 12.5,
+              "value": 487.014126,
+              "easing": "linear"
+            },
+            {
+              "time": 14,
+              "value": 518.526805,
+              "easing": "linear"
+            },
+            {
+              "time": 16.916666666666668,
+              "value": 522.537509,
+              "easing": "linear"
+            }
+          ],
+          "rz": [],
+          "normalSpin": []
+        }
+      },
+      "links": {
+        "scale": true
+      },
+      "earthMaterial": {
+        "model": "classic",
+        "glowIntensity": 4.4,
+        "glowWidth": 0.196
+      },
+      "adjust": {
+        "hue": 0,
+        "saturation": 1,
+        "brightness": 0.82
+      }
+    },
+    {
+      "id": "ribbon-0",
+      "name": "红色条带",
+      "type": "ribbon",
+      "enabled": true,
+      "in": 0,
+      "out": 2.5,
+      "base": {
+        "x": 0,
+        "y": 0,
+        "z": 3.4,
+        "rx": -7.448451336700702,
+        "ry": 6.875493541569878,
+        "rz": 27.501974166279513,
+        "sx": 1,
+        "sy": 1,
+        "sz": 1,
+        "opacity": 1,
+        "reveal": 1,
+        "gx": 0,
+        "gy": 0,
+        "gz": 0,
+        "grx": 0,
+        "gry": 0,
+        "grz": 0,
+        "gsx": 1,
+        "gsy": 1,
+        "gsz": 1,
+        "normalSpin": 0,
+        "groupRotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "rotation": [
+          -0.04875548464246694,
+          0.07353432657916067,
+          0.23299054308629363,
+          0.9684683848036454
+        ]
+      },
+      "tracks": {
+        "x": [
+          {
+            "time": 0,
+            "value": 6.989518,
+            "easing": "linear"
+          },
+          {
+            "time": 0.791667,
+            "value": 3.3590351443250124,
+            "easing": "linear"
+          },
+          {
+            "time": 1.458333,
+            "value": -0.262398,
+            "easing": "linear"
+          },
+          {
+            "time": 2.5,
+            "value": -9,
+            "easing": "linear"
+          }
+        ],
+        "y": [
+          {
+            "time": 0,
+            "value": 2.106459,
+            "easing": "linear"
+          },
+          {
+            "time": 0.791667,
+            "value": -0.5180069715254131,
+            "easing": "linear"
+          },
+          {
+            "time": 1.458333,
+            "value": -2.493318,
+            "easing": "linear"
+          },
+          {
+            "time": 2.5,
+            "value": -4.7,
+            "easing": "linear"
+          }
+        ],
+        "rotation": [
+          {
+            "time": 0,
+            "value": [
+              -0.06695408871521903,
+              0.057459067800366075,
+              -0.039831663492904956,
+              0.9953034934708186
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 0.791667,
+            "value": [
+              -0.06418454285016836,
+              0.06053708720517848,
+              -0.08648459141122863,
+              0.9923386624435533
+            ],
+            "easing": "linear"
+          }
+        ],
+        "sx": [
+          {
+            "time": 0,
+            "value": 0.481,
+            "easing": "linear"
+          }
+        ],
+        "sy": [
+          {
+            "time": 0,
+            "value": 0.481,
+            "easing": "linear"
+          }
+        ],
+        "sz": [
+          {
+            "time": 0,
+            "value": 0.481,
+            "easing": "linear"
+          }
+        ],
+        "z": [
+          {
+            "time": 0,
+            "value": 3.7371967058516016,
+            "easing": "linear"
+          },
+          {
+            "time": 0.791667,
+            "value": 3.575161068225536,
+            "easing": "linear"
+          },
+          {
+            "time": 1.458333,
+            "value": 3.575161,
+            "easing": "linear"
+          }
+        ],
+        "opacity": [
+          {
+            "time": 1.458333,
+            "value": 1,
+            "easing": "linear"
+          },
+          {
+            "time": 2.5,
+            "value": 0.154,
+            "easing": "linear"
+          }
+        ]
+      },
+      "geometry": {
+        "width": 22,
+        "height": 15.021847854698605,
+        "depth": 0.42
+      },
+      "material": {
+        "color": "#e82730",
+        "sideColor": "#e82730",
+        "metalness": 0.55,
+        "roughness": 0.24
+      },
+      "pivot": {
+        "preset": "custom",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "orbit": {
+        "center": [
+          0,
+          0,
+          0
+        ]
+      },
+      "rotationReference": {
+        "base": {
+          "rx": -7.448451336700702,
+          "ry": 6.875493541569878,
+          "rz": 27.501974166279513,
+          "normalSpin": 0
+        },
+        "tracks": {
+          "rx": [],
+          "ry": [],
+          "rz": [],
+          "normalSpin": []
+        }
+      },
+      "image": "red",
+      "links": {
+        "scale": true
+      }
+    },
+    {
+      "id": "ribbon-1",
+      "name": "蓝色条带",
+      "type": "ribbon",
+      "enabled": true,
+      "in": 1.35,
+      "out": 3.9,
+      "base": {
+        "x": 0,
+        "y": 0,
+        "z": 3.4,
+        "rx": 6.875493541569878,
+        "ry": -10.313240312354818,
+        "rz": -24.6371851906254,
+        "sx": 1,
+        "sy": 1,
+        "sz": 1,
+        "opacity": 1,
+        "reveal": 1,
+        "gx": 0,
+        "gy": 0,
+        "gz": 0,
+        "grx": 0,
+        "gry": 0,
+        "grz": 0,
+        "gsx": 1,
+        "gsy": 1,
+        "gsz": 1,
+        "normalSpin": 0,
+        "groupRotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "rotation": [
+          0.07748716813645552,
+          -0.07490982251340692,
+          -0.21736699059879996,
+          0.9701215638584805
+        ]
+      },
+      "tracks": {
+        "x": [
+          {
+            "time": 1.5,
+            "value": 11.11380249669281,
+            "easing": "linear"
+          },
+          {
+            "time": 1.833333,
+            "value": 8.481189349097496,
+            "easing": "linear"
+          },
+          {
+            "time": 2,
+            "value": 5.834915975391073,
+            "easing": "linear"
+          },
+          {
+            "time": 3.416667,
+            "value": -6.157562,
+            "easing": "linear"
+          },
+          {
+            "time": 3.875,
+            "value": -7.603167488084548,
+            "easing": "linear"
+          }
+        ],
+        "y": [
+          {
+            "time": 1.5,
+            "value": -7.368115105521361,
+            "easing": "linear"
+          },
+          {
+            "time": 1.833333,
+            "value": -5.323478345117756,
+            "easing": "linear"
+          },
+          {
+            "time": 2,
+            "value": -3.7390134394391854,
+            "easing": "linear"
+          },
+          {
+            "time": 3.416667,
+            "value": 3.535585,
+            "easing": "linear"
+          },
+          {
+            "time": 3.875,
+            "value": 4.303873,
+            "easing": "linear"
+          }
+        ],
+        "z": [
+          {
+            "time": 1.5,
+            "value": 2.5925237107273116,
+            "easing": "linear"
+          },
+          {
+            "time": 1.833333,
+            "value": 3.1271660272789186,
+            "easing": "linear"
+          },
+          {
+            "time": 2,
+            "value": 2.883986,
+            "easing": "linear"
+          },
+          {
+            "time": 3.416667,
+            "value": 3.486003,
+            "easing": "linear"
+          },
+          {
+            "time": 3.875,
+            "value": 3.313681,
+            "easing": "linear"
+          }
+        ],
+        "rotation": [
+          {
+            "time": 1.5,
+            "value": [
+              0,
+              0,
+              0.1045284632676535,
+              0.9945218953682735
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 1.833333,
+            "value": [
+              0,
+              0,
+              0.1045284632676535,
+              0.9945218953682735
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 2,
+            "value": [
+              0,
+              0,
+              0.1045284632676535,
+              0.9945218953682735
+            ],
+            "easing": "linear"
+          }
+        ],
+        "sx": [
+          {
+            "time": 1.5,
+            "value": 0.481,
+            "easing": "linear"
+          }
+        ],
+        "sy": [
+          {
+            "time": 1.5,
+            "value": 0.481,
+            "easing": "linear"
+          }
+        ],
+        "sz": [
+          {
+            "time": 1.5,
+            "value": 0.481,
+            "easing": "linear"
+          }
+        ],
+        "opacity": [
+          {
+            "time": 2.958333,
+            "value": 1,
+            "easing": "linear"
+          },
+          {
+            "time": 3.416667,
+            "value": 0.469,
+            "easing": "linear"
+          },
+          {
+            "time": 3.875,
+            "value": 0,
+            "easing": "linear"
+          }
+        ]
+      },
+      "geometry": {
+        "width": 22,
+        "height": 22.78425294482331,
+        "depth": 0.42
+      },
+      "material": {
+        "color": "#133cdd",
+        "sideColor": "#133cdd",
+        "metalness": 0.55,
+        "roughness": 0.24
+      },
+      "pivot": {
+        "preset": "custom",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "orbit": {
+        "center": [
+          0,
+          0,
+          0
+        ]
+      },
+      "rotationReference": {
+        "base": {
+          "rx": 6.875493541569878,
+          "ry": -10.313240312354818,
+          "rz": -24.6371851906254,
+          "normalSpin": 0
+        },
+        "tracks": {
+          "rx": [],
+          "ry": [],
+          "rz": [],
+          "normalSpin": []
+        }
+      },
+      "image": "blue",
+      "links": {
+        "scale": true
+      }
+    },
+    {
+      "id": "ribbon-2",
+      "name": "绿色条带",
+      "type": "ribbon",
+      "enabled": true,
+      "in": 3.15,
+      "out": 5.3,
+      "base": {
+        "x": 0,
+        "y": 0,
+        "z": 3.4,
+        "rx": -4.583662361046586,
+        "ry": 6.875493541569878,
+        "rz": 35.52338329811104,
+        "sx": 1,
+        "sy": 1,
+        "sz": 1,
+        "opacity": 1,
+        "reveal": 1,
+        "gx": 0,
+        "gy": 0,
+        "gz": 0,
+        "grx": 0,
+        "gry": 0,
+        "grz": 0,
+        "gsx": 1,
+        "gsy": 1,
+        "gsz": 1,
+        "normalSpin": 0,
+        "groupRotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "rotation": [
+          -0.0197367502391093,
+          0.0692371978378973,
+          0.30198249995747406,
+          0.9505909955627548
+        ]
+      },
+      "tracks": {
+        "x": [
+          {
+            "time": 3.15,
+            "value": -7.521099706405774,
+            "easing": "linear"
+          },
+          {
+            "time": 5,
+            "value": 6.451817,
+            "easing": "linear"
+          }
+        ],
+        "y": [
+          {
+            "time": 3.15,
+            "value": -5.0616438858696,
+            "easing": "linear"
+          },
+          {
+            "time": 5,
+            "value": 3.270998,
+            "easing": "linear"
+          }
+        ],
+        "z": [
+          {
+            "time": 3.15,
+            "value": 6.160207431083333,
+            "easing": "linear"
+          },
+          {
+            "time": 5,
+            "value": 6.160207,
+            "easing": "linear"
+          }
+        ],
+        "rotation": [
+          {
+            "time": 3.15,
+            "value": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "easing": "linear"
+          }
+        ],
+        "sx": [
+          {
+            "time": 3.15,
+            "value": 0.351,
+            "easing": "linear"
+          }
+        ],
+        "sy": [
+          {
+            "time": 3.15,
+            "value": 0.3509999999999999,
+            "easing": "linear"
+          }
+        ],
+        "sz": [
+          {
+            "time": 3.15,
+            "value": 0.3509999999999999,
+            "easing": "linear"
+          }
+        ]
+      },
+      "geometry": {
+        "width": 22,
+        "height": 15.03768115942029,
+        "depth": 0.42
+      },
+      "material": {
+        "color": "#05af36",
+        "sideColor": "#05af36",
+        "metalness": 0.55,
+        "roughness": 0.85
+      },
+      "pivot": {
+        "preset": "custom",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "orbit": {
+        "center": [
+          0,
+          0,
+          0
+        ]
+      },
+      "rotationReference": {
+        "base": {
+          "rx": -4.583662361046586,
+          "ry": 6.875493541569878,
+          "rz": 35.52338329811104,
+          "normalSpin": 0
+        },
+        "tracks": {
+          "rx": [],
+          "ry": [],
+          "rz": [],
+          "normalSpin": []
+        }
+      },
+      "image": "green",
+      "links": {
+        "scale": true
+      },
+      "adjust": {
+        "hue": 0,
+        "saturation": 1,
+        "brightness": 1
+      }
+    },
+    {
+      "id": "station",
+      "name": "文字一",
+      "type": "text",
+      "enabled": true,
+      "in": 5.72,
+      "out": 9.79,
+      "base": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "rx": 0,
+        "ry": 0,
+        "rz": 0,
+        "sx": 1,
+        "sy": 1,
+        "sz": 1,
+        "opacity": 1,
+        "reveal": 1,
+        "gx": 0,
+        "gy": 0,
+        "gz": 0,
+        "grx": 0,
+        "gry": 0,
+        "grz": 0,
+        "gsx": 1,
+        "gsy": 1,
+        "gsz": 1,
+        "normalSpin": 0,
+        "groupRotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "rotation": [
+          0,
+          -0.19866933246084442,
+          0,
+          0.9800665775035706
+        ]
+      },
+      "tracks": {
+        "x": [
+          {
+            "time": 5.833333,
+            "value": 25.559685,
+            "easing": "linear"
+          },
+          {
+            "time": 5.875,
+            "value": 24.652536778583038,
+            "easing": "linear"
+          },
+          {
+            "time": 6.083333,
+            "value": 19.241624117346507,
+            "easing": "linear"
+          },
+          {
+            "time": 6.416667,
+            "value": 12.50027885218333,
+            "easing": "linear"
+          },
+          {
+            "time": 6.833333,
+            "value": 8.439472909607078,
+            "easing": "linear"
+          },
+          {
+            "time": 7,
+            "value": 5.953646619572452,
+            "easing": "linear"
+          },
+          {
+            "time": 7.5,
+            "value": 2.7820155850006087,
+            "easing": "linear"
+          },
+          {
+            "time": 8.041667,
+            "value": 0.5220068333616784,
+            "easing": "linear"
+          },
+          {
+            "time": 8.5,
+            "value": -0.34698807745258375,
+            "easing": "linear"
+          },
+          {
+            "time": 9.208333,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 9.79,
+            "value": 0,
+            "easing": "linear"
+          }
+        ],
+        "y": [
+          {
+            "time": 5.833333,
+            "value": -3.035546,
+            "easing": "linear"
+          },
+          {
+            "time": 5.875,
+            "value": -2.6047213160116276,
+            "easing": "linear"
+          },
+          {
+            "time": 6.083333,
+            "value": -1.601393422566912,
+            "easing": "linear"
+          },
+          {
+            "time": 6.416667,
+            "value": -1.091010445897458,
+            "easing": "linear"
+          },
+          {
+            "time": 6.833333,
+            "value": -1.116706221875595,
+            "easing": "linear"
+          },
+          {
+            "time": 7,
+            "value": -0.8895282150447289,
+            "easing": "linear"
+          },
+          {
+            "time": 7.5,
+            "value": -0.46230918569437,
+            "easing": "linear"
+          },
+          {
+            "time": 8.041667,
+            "value": -0.18806049407500003,
+            "easing": "linear"
+          },
+          {
+            "time": 8.5,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 9,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 9.208333,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 9.52,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 9.79,
+            "value": 0,
+            "easing": "linear"
+          }
+        ],
+        "z": [
+          {
+            "time": 5.833333,
+            "value": 19.553851,
+            "easing": "linear"
+          },
+          {
+            "time": 5.875,
+            "value": 18.121641267920495,
+            "easing": "linear"
+          },
+          {
+            "time": 6.083333,
+            "value": 15.195101790470376,
+            "easing": "linear"
+          },
+          {
+            "time": 6.416667,
+            "value": 10.55635433787752,
+            "easing": "linear"
+          },
+          {
+            "time": 6.833333,
+            "value": 5.684186076372902,
+            "easing": "linear"
+          },
+          {
+            "time": 7,
+            "value": 4.8010056918066875,
+            "easing": "linear"
+          },
+          {
+            "time": 7.5,
+            "value": 3.543468471582716,
+            "easing": "linear"
+          },
+          {
+            "time": 8.041667,
+            "value": 1.7761818022726341,
+            "easing": "linear"
+          },
+          {
+            "time": 8.5,
+            "value": 1.5335024898436767,
+            "easing": "linear"
+          },
+          {
+            "time": 9.79,
+            "value": 1.3,
+            "easing": "linear"
+          }
+        ],
+        "sx": [
+          {
+            "time": 5.875,
+            "value": 4,
+            "easing": "linear"
+          },
+          {
+            "time": 6.416667,
+            "value": 2.7,
+            "easing": "linear"
+          },
+          {
+            "time": 6.833333,
+            "value": 2.3,
+            "easing": "linear"
+          },
+          {
+            "time": 7,
+            "value": 2,
+            "easing": "linear"
+          },
+          {
+            "time": 7.5,
+            "value": 1.45,
+            "easing": "linear"
+          },
+          {
+            "time": 8.041667,
+            "value": 1.19,
+            "easing": "linear"
+          },
+          {
+            "time": 8.5,
+            "value": 1.0500000000000003,
+            "easing": "linear"
+          },
+          {
+            "time": 9.79,
+            "value": 0.95,
+            "easing": "linear"
+          }
+        ],
+        "sy": [
+          {
+            "time": 5.875,
+            "value": 4,
+            "easing": "linear"
+          },
+          {
+            "time": 6.416667,
+            "value": 2.7,
+            "easing": "linear"
+          },
+          {
+            "time": 6.833333,
+            "value": 2.3,
+            "easing": "linear"
+          },
+          {
+            "time": 7,
+            "value": 2,
+            "easing": "linear"
+          },
+          {
+            "time": 7.5,
+            "value": 1.4500000000000006,
+            "easing": "linear"
+          },
+          {
+            "time": 8.041667,
+            "value": 1.19,
+            "easing": "linear"
+          },
+          {
+            "time": 8.5,
+            "value": 1.05,
+            "easing": "linear"
+          },
+          {
+            "time": 9.79,
+            "value": 0.95,
+            "easing": "linear"
+          }
+        ],
+        "sz": [
+          {
+            "time": 5.875,
+            "value": 4,
+            "easing": "linear"
+          },
+          {
+            "time": 6.416667,
+            "value": 2.7,
+            "easing": "linear"
+          },
+          {
+            "time": 6.833333,
+            "value": 2.3,
+            "easing": "linear"
+          },
+          {
+            "time": 7,
+            "value": 2,
+            "easing": "linear"
+          },
+          {
+            "time": 7.5,
+            "value": 1.4500000000000004,
+            "easing": "linear"
+          },
+          {
+            "time": 8.041667,
+            "value": 1.19,
+            "easing": "linear"
+          },
+          {
+            "time": 8.5,
+            "value": 1.0500000000000003,
+            "easing": "linear"
+          },
+          {
+            "time": 9.79,
+            "value": 0.95,
+            "easing": "linear"
+          }
+        ],
+        "rotation": [
+          {
+            "time": 0,
+            "value": [
+              0,
+              -0.19866933246084442,
+              0,
+              0.9800665775035706
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 5.833333,
+            "value": [
+              -0.18632158314338987,
+              -0.44244437244123397,
+              -0.08787093323568942,
+              0.872814954066618
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 5.875,
+            "value": [
+              -0.1973822854667813,
+              -0.44301335792571866,
+              -0.0934574294444505,
+              0.8695085433536146
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 6.416667,
+            "value": [
+              -0.23370125856754687,
+              -0.3154030636179233,
+              -0.06582540404252733,
+              0.9173721411657383
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 6.833333,
+            "value": [
+              -0.15610985457634652,
+              -0.2694081700799341,
+              -0.047553242172283204,
+              0.9490983301835683
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 7,
+            "value": [
+              -0.12415346103483221,
+              -0.23988386897255162,
+              -0.03587507201197955,
+              0.9621614348579803
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 8.041667,
+            "value": [
+              -0.07187875594682971,
+              -0.04432543427216436,
+              0.00031650736045227604,
+              0.9964279201945373
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 8.5,
+            "value": [
+              -0.05112894674959535,
+              -0.03115059217794481,
+              0.003960353229393254,
+              0.9981982703919793
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 9,
+            "value": [
+              -0.02850483721796077,
+              0.00020141760444759328,
+              0.007063037321811125,
+              0.999568680576736
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 9.52,
+            "value": [
+              0,
+              0.3826834323650898,
+              0,
+              0.9238795325112867
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 9.79,
+            "value": [
+              0,
+              0.7071067811865475,
+              0,
+              0.7071067811865476
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 16.916666666666668,
+            "value": [
+              0,
+              0.7071067811865475,
+              0,
+              0.7071067811865476
+            ],
+            "easing": "linear"
+          }
+        ]
+      },
+      "text": {
+        "content": "中国中央电视台",
+        "size": 1.85,
+        "tracking": 0,
+        "depth": 0.45,
+        "bevelSize": 0.05,
+        "bevelThickness": 0.05,
+        "bevelSegments": 1,
+        "curveSegments": 8
+      },
+      "material": {
+        "color": "#dca500",
+        "sideColor": "#a37a0a",
+        "metalness": 1,
+        "roughness": 0.95
+      },
+      "pivot": {
+        "preset": "center",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "orbit": {
+        "center": [
+          0,
+          0,
+          0
+        ]
+      },
+      "rotationReference": {
+        "base": {
+          "rx": 0,
+          "ry": 0,
+          "rz": 0,
+          "normalSpin": 0
+        },
+        "tracks": {
+          "rx": [],
+          "ry": [
+            {
+              "time": 5.72,
+              "value": -22.918312,
+              "easing": "linear"
+            },
+            {
+              "time": 8.3,
+              "value": 0,
+              "easing": "linear"
+            },
+            {
+              "time": 9.25,
+              "value": 0,
+              "easing": "linear"
+            },
+            {
+              "time": 9.79,
+              "value": 90,
+              "easing": "linear"
+            }
+          ],
+          "rz": [],
+          "normalSpin": []
+        }
+      },
+      "links": {
+        "scale": true
+      }
+    },
+    {
+      "id": "logo",
+      "name": "标识",
+      "type": "text",
+      "enabled": true,
+      "in": 9.79,
+      "out": 12.48,
+      "base": {
+        "x": 0,
+        "y": 0.02,
+        "z": 0,
+        "rx": 0,
+        "ry": 0,
+        "rz": 0,
+        "sx": 1.6,
+        "sy": 1.6,
+        "sz": 1.6,
+        "opacity": 1,
+        "reveal": 1,
+        "gx": 0,
+        "gy": 0,
+        "gz": 0,
+        "grx": 0,
+        "gry": 0,
+        "grz": 0,
+        "gsx": 1,
+        "gsy": 1,
+        "gsz": 1,
+        "normalSpin": 0,
+        "groupRotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "rotation": [
+          0,
+          -0.7071067811865475,
+          0,
+          0.7071067811865476
+        ]
+      },
+      "tracks": {
+        "x": [
+          {
+            "time": 9.79,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 10.833333,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 11,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 11.7,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 12,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 12.2,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 12.333333,
+            "value": -0.07143325251349249,
+            "easing": "linear"
+          },
+          {
+            "time": 12.375,
+            "value": -0.762675,
+            "easing": "linear"
+          },
+          {
+            "time": 12.48,
+            "value": -2.5,
+            "easing": "linear"
+          }
+        ],
+        "z": [
+          {
+            "time": 9.79,
+            "value": 1.4,
+            "easing": "linear"
+          },
+          {
+            "time": 11,
+            "value": 1.4,
+            "easing": "linear"
+          },
+          {
+            "time": 11.5,
+            "value": 4.7,
+            "easing": "linear"
+          },
+          {
+            "time": 12,
+            "value": 12.5,
+            "easing": "linear"
+          },
+          {
+            "time": 12.333333,
+            "value": 16.574189718921655,
+            "easing": "linear"
+          },
+          {
+            "time": 12.375,
+            "value": 20.543482,
+            "easing": "linear"
+          },
+          {
+            "time": 12.48,
+            "value": 19,
+            "easing": "linear"
+          }
+        ],
+        "rotation": [
+          {
+            "time": 0,
+            "value": [
+              0,
+              -0.7071067811865475,
+              0,
+              0.7071067811865476
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 9.79,
+            "value": [
+              0,
+              -0.7071067811865475,
+              0,
+              0.7071067811865476
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 10.07,
+            "value": [
+              0,
+              -0.41022346826445105,
+              0,
+              0.9119850361080959
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 10.833333,
+            "value": [
+              0,
+              -0.0031184364124184905,
+              0,
+              0.9999951376653498
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 12.48,
+            "value": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 16.916666666666668,
+            "value": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "easing": "linear"
+          }
+        ],
+        "y": [
+          {
+            "time": 10.833333,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 12,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 12.2,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 12.333333,
+            "value": -0.008975103278268975,
+            "easing": "linear"
+          },
+          {
+            "time": 12.375,
+            "value": -0.008975,
+            "easing": "linear"
+          }
+        ],
+        "sx": [
+          {
+            "time": 11,
+            "value": 1.601,
+            "easing": "linear"
+          },
+          {
+            "time": 11.5,
+            "value": 2.091,
+            "easing": "linear"
+          },
+          {
+            "time": 11.7,
+            "value": 1.981,
+            "easing": "linear"
+          },
+          {
+            "time": 12,
+            "value": 2.1810000000000005,
+            "easing": "linear"
+          },
+          {
+            "time": 12.2,
+            "value": 2.341,
+            "easing": "linear"
+          },
+          {
+            "time": 12.333333,
+            "value": 2.491,
+            "easing": "linear"
+          }
+        ],
+        "sy": [
+          {
+            "time": 11,
+            "value": 1.601,
+            "easing": "linear"
+          },
+          {
+            "time": 11.5,
+            "value": 2.0909999999999997,
+            "easing": "linear"
+          },
+          {
+            "time": 11.7,
+            "value": 1.981,
+            "easing": "linear"
+          },
+          {
+            "time": 12,
+            "value": 2.181,
+            "easing": "linear"
+          },
+          {
+            "time": 12.2,
+            "value": 2.341,
+            "easing": "linear"
+          },
+          {
+            "time": 12.333333,
+            "value": 2.491,
+            "easing": "linear"
+          }
+        ],
+        "sz": [
+          {
+            "time": 11,
+            "value": 1.601,
+            "easing": "linear"
+          },
+          {
+            "time": 11.5,
+            "value": 2.0909999999999997,
+            "easing": "linear"
+          },
+          {
+            "time": 11.7,
+            "value": 1.981,
+            "easing": "linear"
+          },
+          {
+            "time": 12,
+            "value": 2.181,
+            "easing": "linear"
+          },
+          {
+            "time": 12.2,
+            "value": 2.341,
+            "easing": "linear"
+          },
+          {
+            "time": 12.333333,
+            "value": 2.491,
+            "easing": "linear"
+          }
+        ]
+      },
+      "material": {
+        "color": "#dca500",
+        "sideColor": "#86600c",
+        "metalness": 1,
+        "roughness": 0.75
+      },
+      "pivot": {
+        "preset": "custom",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "orbit": {
+        "center": [
+          0,
+          0,
+          0
+        ]
+      },
+      "rotationReference": {
+        "base": {
+          "rx": 0,
+          "ry": 0,
+          "rz": 0,
+          "normalSpin": 0
+        },
+        "tracks": {
+          "rx": [],
+          "ry": [
+            {
+              "time": 9.79,
+              "value": -90,
+              "easing": "linear"
+            },
+            {
+              "time": 10.35,
+              "value": -6.875494,
+              "easing": "linear"
+            },
+            {
+              "time": 10.75,
+              "value": 0,
+              "easing": "linear"
+            },
+            {
+              "time": 12.48,
+              "value": 0,
+              "easing": "linear"
+            }
+          ],
+          "rz": [],
+          "normalSpin": []
+        }
+      },
+      "links": {
+        "scale": true
+      },
+      "text": {
+        "content": "CCTV",
+        "size": 1.25,
+        "tracking": 0,
+        "depth": 0.28,
+        "bevelSize": 0.03,
+        "bevelThickness": 0.03,
+        "bevelSegments": 2,
+        "curveSegments": 12
+      }
+    },
+    {
+      "id": "headline",
+      "name": "文字2",
+      "type": "text",
+      "enabled": true,
+      "in": 12.55,
+      "out": 18.916666666666668,
+      "base": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "rx": 0,
+        "ry": 0,
+        "rz": 0,
+        "sx": 1,
+        "sy": 1,
+        "sz": 1,
+        "opacity": 1,
+        "reveal": 1,
+        "gx": 0,
+        "gy": 0,
+        "gz": 0,
+        "grx": 0,
+        "gry": 0,
+        "grz": 0,
+        "gsx": 1,
+        "gsy": 1,
+        "gsz": 1,
+        "normalSpin": 0,
+        "groupRotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "rotation": [
+          -0.6434125807440634,
+          0.038226177557673616,
+          -0.032197465004828056,
+          0.7638863354824827
+        ]
+      },
+      "tracks": {
+        "y": [
+          {
+            "time": 12.55,
+            "value": 6.2,
+            "easing": "linear"
+          },
+          {
+            "time": 12.65,
+            "value": 3.76419,
+            "easing": "linear"
+          },
+          {
+            "time": 12.75,
+            "value": 1.12,
+            "easing": "linear"
+          },
+          {
+            "time": 13,
+            "value": -1.65,
+            "easing": "linear"
+          },
+          {
+            "time": 13.22,
+            "value": -2.8430386229861835,
+            "easing": "linear"
+          },
+          {
+            "time": 13.5,
+            "value": -1.3,
+            "easing": "linear"
+          },
+          {
+            "time": 13.75,
+            "value": 0.5,
+            "easing": "linear"
+          },
+          {
+            "time": 14.25,
+            "value": 0.5,
+            "easing": "linear"
+          }
+        ],
+        "z": [
+          {
+            "time": 12.55,
+            "value": 5,
+            "easing": "linear"
+          },
+          {
+            "time": 12.65,
+            "value": 4.67416,
+            "easing": "linear"
+          },
+          {
+            "time": 13,
+            "value": 3.4,
+            "easing": "linear"
+          },
+          {
+            "time": 13.22,
+            "value": 2.793768285344773,
+            "easing": "linear"
+          },
+          {
+            "time": 13.75,
+            "value": 1.757495,
+            "easing": "linear"
+          }
+        ],
+        "sx": [
+          {
+            "time": 12.55,
+            "value": 1.22,
+            "easing": "linear"
+          },
+          {
+            "time": 12.75,
+            "value": 1.621,
+            "easing": "linear"
+          },
+          {
+            "time": 12.916667,
+            "value": 1.431,
+            "easing": "linear"
+          },
+          {
+            "time": 13,
+            "value": 1.221,
+            "easing": "linear"
+          },
+          {
+            "time": 13.22,
+            "value": 1.021,
+            "easing": "linear"
+          },
+          {
+            "time": 13.3,
+            "value": 0.981,
+            "easing": "linear"
+          },
+          {
+            "time": 13.5,
+            "value": 0.931,
+            "easing": "linear"
+          }
+        ],
+        "sy": [
+          {
+            "time": 12.55,
+            "value": 1.22,
+            "easing": "linear"
+          },
+          {
+            "time": 12.75,
+            "value": 1.6209999999999998,
+            "easing": "linear"
+          },
+          {
+            "time": 12.916667,
+            "value": 1.431,
+            "easing": "linear"
+          },
+          {
+            "time": 13,
+            "value": 1.221,
+            "easing": "linear"
+          },
+          {
+            "time": 13.22,
+            "value": 1.021,
+            "easing": "linear"
+          },
+          {
+            "time": 13.3,
+            "value": 0.9809999999999997,
+            "easing": "linear"
+          },
+          {
+            "time": 13.5,
+            "value": 0.931,
+            "easing": "linear"
+          }
+        ],
+        "sz": [
+          {
+            "time": 12.55,
+            "value": 1.22,
+            "easing": "linear"
+          },
+          {
+            "time": 12.75,
+            "value": 1.6209997003696859,
+            "easing": "linear"
+          },
+          {
+            "time": 12.916667,
+            "value": 1.4309999999919236,
+            "easing": "linear"
+          },
+          {
+            "time": 13,
+            "value": 1.221,
+            "easing": "linear"
+          },
+          {
+            "time": 13.22,
+            "value": 1.021,
+            "easing": "linear"
+          },
+          {
+            "time": 13.3,
+            "value": 0.9809999999999997,
+            "easing": "linear"
+          },
+          {
+            "time": 13.5,
+            "value": 0.931,
+            "easing": "linear"
+          }
+        ],
+        "rotation": [
+          {
+            "time": 0,
+            "value": [
+              -0.6434125807440634,
+              0.038226177557673616,
+              -0.032197465004828056,
+              0.7638863354824827
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 12.55,
+            "value": [
+              -0.6442176851130936,
+              -2.2463012339011527e-18,
+              -2.6669028074803667e-18,
+              0.7648421890740121
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 12.65,
+            "value": [
+              -0.5891447566273038,
+              8.206827831983944e-18,
+              1.1255879947155696e-17,
+              0.8080275092709127
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 12.75,
+            "value": [
+              -0.5749135584594143,
+              -4.7344016553973515e-18,
+              -9.300735951795193e-18,
+              0.8182141530794576
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 12.8125,
+            "value": [
+              -0.5690410420832702,
+              -3.03884935424691e-18,
+              -8.143450384742057e-18,
+              0.8223091221826412
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 12.916667,
+            "value": [
+              -0.5395469776750039,
+              0.0004721533530816773,
+              0.0007367882923458967,
+              0.8419550422059318
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 13,
+            "value": [
+              -0.5103145202195773,
+              3.95266964147415e-20,
+              -8.671557046753085e-19,
+              0.8599878432007412
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 13.22,
+            "value": [
+              -0.40096147477277133,
+              0,
+              0,
+              0.9160949163422121
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 13.3,
+            "value": [
+              -0.21956497555941135,
+              0,
+              0,
+              0.9755978789991269
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 13.75,
+            "value": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "easing": "linear"
+          },
+          {
+            "time": 16.916666666666668,
+            "value": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "easing": "linear"
+          }
+        ],
+        "x": [
+          {
+            "time": 12.65,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 13.22,
+            "value": 0,
+            "easing": "linear"
+          },
+          {
+            "time": 13.75,
+            "value": 0,
+            "easing": "linear"
+          }
+        ]
+      },
+      "text": {
+        "content": "新闻联播",
+        "size": 3.1,
+        "tracking": 0,
+        "depth": 0.95,
+        "bevelSize": 0.012,
+        "bevelThickness": 0.015,
+        "bevelSegments": 2,
+        "curveSegments": 8
+      },
+      "material": {
+        "color": "#dca500",
+        "sideColor": "#86600c",
+        "metalness": 1,
+        "roughness": 0.85
+      },
+      "pivot": {
+        "preset": "custom",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "orbit": {
+        "center": [
+          0,
+          0,
+          0
+        ]
+      },
+      "rotationReference": {
+        "base": {
+          "rx": 0,
+          "ry": 0,
+          "rz": 0,
+          "normalSpin": 0
+        },
+        "tracks": {
+          "rx": [
+            {
+              "time": 12.55,
+              "value": -80.214091,
+              "easing": "linear"
+            },
+            {
+              "time": 12.75,
+              "value": -64.171273,
+              "easing": "linear"
+            },
+            {
+              "time": 13,
+              "value": -28.074932,
+              "easing": "linear"
+            },
+            {
+              "time": 13.3,
+              "value": -11.459156,
+              "easing": "linear"
+            },
+            {
+              "time": 13.95,
+              "value": 0,
+              "easing": "linear"
+            }
+          ],
+          "ry": [
+            {
+              "time": 12.55,
+              "value": 5.729578,
+              "easing": "linear"
+            },
+            {
+              "time": 13.3,
+              "value": 0,
+              "easing": "linear"
+            }
+          ],
+          "rz": [],
+          "normalSpin": []
+        }
+      },
+      "links": {
+        "scale": true
+      },
+      "adjust": {
+        "hue": 0,
+        "saturation": 1,
+        "brightness": 1
+      }
+    },
+    {
+      "id": "english",
+      "name": "英文副标题",
+      "type": "text",
+      "enabled": true,
+      "in": 14.55,
+      "out": 18.916666666666668,
+      "base": {
+        "x": 0,
+        "y": -1.7,
+        "z": 1.65,
+        "rx": 0,
+        "ry": 0,
+        "rz": 0,
+        "sx": 1,
+        "sy": 1,
+        "sz": 1,
+        "opacity": 1,
+        "reveal": 1,
+        "gx": 0,
+        "gy": 0,
+        "gz": 0,
+        "grx": 0,
+        "gry": 0,
+        "grz": 0,
+        "gsx": 1,
+        "gsy": 1,
+        "gsz": 1,
+        "normalSpin": 0,
+        "groupRotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "tracks": {
+        "reveal": [
+          {
+            "time": 14.666667,
+            "value": 0.01,
+            "easing": "linear"
+          },
+          {
+            "time": 16.875,
+            "value": 1,
+            "easing": "linear"
+          }
+        ],
+        "x": [
+          {
+            "time": 15.125,
+            "value": 0,
+            "easing": "linear"
+          }
+        ],
+        "y": [
+          {
+            "time": 14.666667,
+            "value": -1.76001,
+            "easing": "linear"
+          },
+          {
+            "time": 15.125,
+            "value": -1.76001,
+            "easing": "linear"
+          }
+        ],
+        "z": [
+          {
+            "time": 15.125,
+            "value": 1.65,
+            "easing": "linear"
+          }
+        ],
+        "sy": [
+          {
+            "time": 16.875,
+            "value": 1,
+            "easing": "linear"
+          }
+        ]
+      },
+      "text": {
+        "content": "XIN WEN LIAN BO",
+        "size": 1.35,
+        "tracking": 0,
+        "depth": 0.5,
+        "bevelSize": 0.025,
+        "bevelThickness": 0.025,
+        "bevelSegments": 1,
+        "curveSegments": 8
+      },
+      "material": {
+        "color": "#617798",
+        "sideColor": "#2c4c5e",
+        "metalness": 0.7,
+        "roughness": 0.5,
+        "emissive": "#a89f9f",
+        "emissiveIntensity": 0,
+        "clearcoat": 0,
+        "clearcoatRoughness": 1
+      },
+      "pivot": {
+        "preset": "custom",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "orbit": {
+        "center": [
+          0,
+          0,
+          0
+        ]
+      },
+      "rotationReference": {
+        "base": {
+          "rx": 0,
+          "ry": 0,
+          "rz": 0,
+          "normalSpin": 0
+        },
+        "tracks": {
+          "rx": [],
+          "ry": [],
+          "rz": [],
+          "normalSpin": []
+        }
+      }
+    },
+    {
+      "id": "camera",
+      "name": "主相机",
+      "type": "camera",
+      "enabled": true,
+      "in": 0,
+      "out": 18.916666666666668,
+      "base": {
+        "x": 0,
+        "y": 0,
+        "z": 18,
+        "rx": 0,
+        "ry": 0,
+        "rz": 0,
+        "sx": 1,
+        "sy": 1,
+        "sz": 1,
+        "opacity": 1,
+        "reveal": 1,
+        "gx": 0,
+        "gy": 0,
+        "gz": 0,
+        "grx": 0,
+        "gry": 0,
+        "grz": 0,
+        "gsx": 1,
+        "gsy": 1,
+        "gsz": 1,
+        "normalSpin": 0
+      },
+      "tracks": {},
+      "projection": {
+        "fov": 32,
+        "near": 0.1,
+        "far": 200
+      },
+      "pivot": {
+        "preset": "custom",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "orbit": {
+        "center": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "text2d-57b49186-e3c1-4890-8398-f3346e769acd",
+      "name": "2D 叠加文字",
+      "type": "text2d",
+      "enabled": true,
+      "in": 0,
+      "out": 18.916666666666668,
+      "base": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "rx": 0,
+        "ry": 0,
+        "rz": 0,
+        "sx": 1,
+        "sy": 1,
+        "sz": 1,
+        "opacity": 1,
+        "reveal": 1,
+        "normalSpin": 0,
+        "gx": 0,
+        "gy": 0,
+        "gz": 0,
+        "grx": 0,
+        "gry": 0,
+        "grz": 0,
+        "gsx": 1,
+        "gsy": 1,
+        "gsz": 1
+      },
+      "tracks": {
+        "x": [
+          {
+            "time": 0,
+            "value": 72.000046,
+            "easing": "linear"
+          }
+        ],
+        "y": [
+          {
+            "time": 0,
+            "value": -437.99984,
+            "easing": "linear"
+          }
+        ]
+      },
+      "text": {
+        "content": "仅供学习技术交流，严禁商用，违者自负。",
+        "size": 64,
+        "tracking": 0,
+        "depth": 0,
+        "bevelSize": 0,
+        "bevelThickness": 0,
+        "bevelSegments": 1,
+        "curveSegments": 8
+      },
+      "material": {
+        "color": "#ffffff",
+        "sideColor": "#ffffff",
+        "metalness": 0,
+        "roughness": 1
+      },
+      "pivot": {
+        "preset": "center",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "orbit": {
+        "center": [
+          0,
+          0,
+          0
+        ]
+      },
+      "links": {
+        "scale": true
+      },
+      "userCreated": true
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "name": "背景音乐",
+    "src": null,
+    "in": 0,
+    "out": 18.916666666666668,
+    "offset": 0,
+    "volume": 1
+  }
+}

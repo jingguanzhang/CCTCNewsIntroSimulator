@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Motion Studio · 新闻联播动画编辑器</title>
+    <link rel="stylesheet" href="static/editor.css" />
+    <link rel="stylesheet" href="static/remixicon/remixicon.css" />
+    <link rel="stylesheet" href="static/window-controls.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("motion-editor-theme") || "dark";
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <header data-host-drag>
+      <div class="header-start" data-host-no-drag>
+        <button id="exitEditor" class="exit-editor">
+          <i class="ri-arrow-left-line" aria-hidden="true"></i> 退出高级编辑
+        </button>
+        <button
+          id="fullscreenToggle"
+          type="button"
+          aria-pressed="false"
+          title="全屏显示编辑器（Esc 退出）"
+        >
+          <i class="ri-fullscreen-line" aria-hidden="true"></i> 全屏
+        </button>
+      </div>
+      <div class="header-center">
+        <span id="projectName">新闻联播 · 前景重建</span
+        ><span class="save-status" id="saveStatus">正在初始化</span>
+      </div>
+      <div class="top-actions" data-host-no-drag>
+        <button id="undo" title="撤销 Ctrl / ⌘ Z">↶</button
+        ><button id="redo" title="重做 Ctrl / ⌘ Shift Z">↷</button
+        ><span class="separator"></span
+        ><button
+          id="viewToggle"
+          class="active"
+          title="打开 / 关闭右侧独立三维编辑视图"
+        >
+          ▣ 3D 视图</button
+        ><button id="openGenerator" class="primary" title="生成 MP4">
+          生成 MP4 ↗</button
+        ><button id="projectSettings" title="工程属性">工程</button
+        ><button
+          id="themeToggle"
+          title="切换亮色主题"
+          aria-label="切换亮色主题"
+        ></button
+        ><button id="helpBtn" title="使用说明">使用说明</button
+        ><button id="jsonBtn" title="项目 JSON">{ } JSON</button
+        ><button id="importBtn" title="导入项目">导入</button
+        ><button id="exportBtn" class="primary" title="保存参数">
+          保存参数
+        </button>
+      </div>
+      <div class="window-controls" role="group" aria-label="窗口控制" data-host-no-drag>
+        <button
+          type="button"
+          data-window-action="minimize"
+          data-host-action="minimize"
+          aria-label="最小化"
+          title="最小化"
+        >
+          <i class="ri-subtract-line" aria-hidden="true"></i>
+        </button>
+        <button
+          type="button"
+          data-window-action="maximize"
+          data-host-action="toggleMaximize"
+          aria-label="最大化"
+          title="最大化"
+        >
+          <i class="ri-checkbox-blank-line" aria-hidden="true"></i>
+        </button>
+        <button
+          type="button"
+          data-window-action="close"
+          data-host-action="close"
+          aria-label="关闭"
+          title="关闭"
+        >
+          <i class="ri-close-line" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+    <div class="app with-edit-view">
+      <aside class="objects">
+        <div class="section-head">
+          场景元素 <small id="objectCount"></small>
+        </div>
+        <div id="objectList"></div>
+        <div class="objects-foot"></div>
+        <p class="objects-note">
+          选择元素编辑属性。运动参数全部来自 JSON，支持保存和重新导入。
+        </p>
+      </aside>
+      <div class="viewport-toolbar" role="toolbar" aria-label="双视图工具栏">
+        <details id="displayOptions" class="display-options">
+          <summary title="视图显示选项">
+            <i class="ri-equalizer-line" aria-hidden="true"></i
+            ><span>显示选项</span
+            ><i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </summary>
+          <div class="display-popover">
+            <div class="menu-section-title">播放</div>
+            <label><input id="loop" type="checkbox" checked />循环播放</label>
+            <div class="menu-section-title">双视图</div>
+            <label
+              ><input
+                id="gizmoEnabledInput"
+                type="checkbox"
+                checked
+              />变换手柄</label
+            >
+            <label
+              ><input id="showPath" type="checkbox" checked />运动轨迹</label
+            >
+            <div class="menu-section-title">主预览</div>
+            <label
+              ><input
+                id="showPivot"
+                type="checkbox"
+                checked
+              />支点与坐标轴</label
+            >
+            <label><input id="compare" type="checkbox" />并排参考</label>
+            <label
+              ><input id="overlayReference" type="checkbox" />叠加参考</label
+            >
+            <label><input id="checker" type="checkbox" />透明网格</label>
+            <div class="menu-section-title">3D 视图</div>
+            <label
+              ><input id="viewGrid" type="checkbox" checked />地面网格</label
+            >
+            <label><input id="viewFrustum" type="checkbox" />相机框</label>
+            <label
+              ><input id="viewAll" type="checkbox" />显示时间范围外元素</label
+            >
+          </div>
+        </details>
+        <div class="shared-transform-tools" role="group" aria-label="变换工具">
+          <button
+            data-view-mode="translate"
+            title="移动 · G"
+            aria-label="移动"
+            aria-pressed="true"
+          >
+            <i class="ri-drag-move-2-line" aria-hidden="true"></i>
+          </button>
+          <button
+            data-view-mode="rotate"
+            title="旋转 · R"
+            aria-label="旋转"
+            aria-pressed="false"
+          >
+            <i class="ri-clockwise-line" aria-hidden="true"></i>
+          </button>
+          <button
+            data-view-mode="scale"
+            title="缩放 · S"
+            aria-label="缩放"
+            aria-pressed="false"
+          >
+            <i class="ri-expand-diagonal-line" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="toolbar-view-nav" role="group" aria-label="3D 视角">
+          <span class="view-nav-label">3D 视角</span
+          ><button data-view="front" title="正面 · 小键盘 1">前</button
+          ><button data-view="right" title="右侧 · 小键盘 3">右</button
+          ><button data-view="top" title="顶部 · 小键盘 7">顶</button
+          ><button id="viewProjection" title="透视 / 正交 · 小键盘 5">
+            透视</button
+          ><button id="viewFrame" title="聚焦选中 · 小键盘小数点">聚焦</button
+          ><button
+            id="viewFramePath"
+            title="将所选元素的完整世界空间轨迹框入视野"
+          >
+            全轨</button
+          ><button id="viewCamera" title="查看正式相机角度 · 小键盘 0">
+            相机
+          </button>
+        </div>
+        <select id="gizmoSpace" aria-label="双视图坐标系" title="双视图坐标系">
+          <option value="local">局部</option>
+          <option value="world">世界</option>
+        </select>
+      </div>
+      <section class="preview-panel">
+        <div class="view-title">
+          <span>主预览 <small id="aspectLabel">16:9</small></span>
+          <button
+            id="previewReset"
+            type="button"
+            title="滚轮以鼠标为中心缩放；鼠标中键拖动画面。点击恢复适合窗口"
+            aria-label="重置主预览缩放（当前 100%）"
+          >
+            100%
+          </button>
+        </div>
+        <div
+          id="overlayControls"
+          hidden
+          style="
+            padding: 6px 12px;
+            border-bottom: 1px solid #343b44;
+            font-size: 10px;
+            color: #b9c5d0;
+          "
+        >
+          <label style="display: flex; align-items: center; gap: 8px"
+            >上层渲染不透明度
+            <input
+              type="range"
+              id="overlayOpacity"
+              min="0"
+              max="100"
+              step="1"
+              value="50"
+              style="width: 100px"
+              aria-label="参考叠加渲染不透明度"
+            /><b id="overlayOpacityLabel">50%</b
+            ><span style="color: #7f909f">仅对照，不影响导出</span></label
+          >
+        </div>
+        <div class="preview-space" id="previewSpace">
+          <div class="stage-grid" id="stageGrid">
+            <div class="stage" id="renderStage">
+              <canvas id="canvas"></canvas
+              ><span class="stage-label"
+                >拖动圆环旋转 · 红 X / 绿 Y / 蓝 Z</span
+              >
+            </div>
+            <div class="stage" id="referenceStage" hidden>
+              <video
+                id="reference"
+                src="static/reference.mp4"
+                muted
+                playsinline
+                preload="auto"
+              ></video
+              ><span class="stage-label">REFERENCE / ORIGINAL</span>
+            </div>
+          </div>
+        </div>
+        <div class="transport">
+          <div class="btns">
+            <button id="start" title="回到起点">↤</button
+            ><button
+              id="prevKeyframe"
+              aria-label="上一关键帧"
+              title="上一关键帧 · 当前元素全部通道 ["
+            >
+              ‹◆</button
+            ><button id="prev" title="上一帧">‹</button
+            ><button class="primary" id="play">▶ 播放</button
+            ><button id="next" title="下一帧">›</button
+            ><button
+              id="nextKeyframe"
+              aria-label="下一关键帧"
+              title="下一关键帧 · 当前元素全部通道 ]"
+            >
+              ◆›
+            </button>
+          </div>
+          <div class="timecode">
+            <input
+              type="number"
+              id="timeInput"
+              value="0"
+              step="0.041667"
+              min="0"
+              aria-label="当前时间"
+            /><span>/ <b id="totalTime">16.92</b>s</span>
+          </div>
+          <div>
+            <select id="speed" aria-label="播放速度">
+              <option value="0.25">0.25×</option>
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+            </select>
+          </div>
+        </div>
+      </section>
+      <section class="edit-view" id="editView">
+        <div
+          class="view-divider"
+          id="viewDivider"
+          title="拖动调整 3D 视图宽度"
+        ></div>
+        <div class="view-title">
+          <span
+            ><i class="ri-box-3-line" aria-hidden="true"></i> 3D 编辑视图
+            <small>独立视角</small></span
+          ><button id="viewClose" title="关闭 3D 编辑视图">✕</button>
+        </div>
+        <div class="view-canvas-wrap" id="viewCanvasWrap">
+          <canvas
+            id="editCanvas"
+            tabindex="0"
+            aria-label="自由三维编辑视图"
+          ></canvas>
+          <div class="view-badge" id="viewBadge">透视 · 对象 · 局部</div>
+          <div class="view-transform-hud" id="viewTransformHud" hidden></div>
+        </div>
+      </section>
+      <aside class="inspector">
+        <div class="section-head">
+          <span class="inspector-heading"
+            >属性检查器 <small id="inspectorState">LIVE</small></span
+          >
+          <button
+            id="inspectorToggle"
+            class="inspector-toggle"
+            type="button"
+            aria-controls="inspector"
+            aria-expanded="true"
+            aria-label="收起属性面板"
+            title="收起属性面板"
+          >
+            <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="inspector-body" id="inspector"></div>
+      </aside>
+      <section class="timeline">
+        <div
+          id="timelineResize"
+          class="timeline-resize"
+          role="separator"
+          tabindex="0"
+          aria-label="调整时间轴高度"
+          aria-orientation="horizontal"
+          aria-controls="timelineScroll"
+          aria-valuemin="160"
+          aria-valuemax="330"
+          aria-valuenow="330"
+          title="上下拖动调整时间轴高度；双击恢复默认"
+        ></div>
+        <div class="timeline-tools">
+          <div class="add-tools">
+            <button id="addText" title="添加立体文字">＋ 3D 文字</button
+            ><button id="addText2d" title="添加固定画面文字">＋ 2D 文字</button
+            ><button id="addImage" title="添加透明图片 / 台标">＋ 图片</button
+            ><button id="duplicate" title="复制选中元素">复制</button>
+          </div>
+          <strong
+            >时间轴
+            <span
+              style="color: #75818e; font: 9px monospace; margin-left: 8px"
+              id="fpsLabel"
+              >24 FPS</span
+            ></strong
+          ><button id="addKey" title="在当前通道添加关键帧">◇ 添加关键帧</button
+          ><button id="deleteKey" title="删除选中关键帧">删除帧</button
+          ><label><input type="checkbox" id="snap" checked />吸附</label
+          ><label
+            >缩放
+            <input type="range" id="zoom" min="1" max="20" step=".01" value="1"
+          /></label>
+        </div>
+        <div
+          class="tl-scroll"
+          id="timelineScroll"
+          tabindex="0"
+          aria-label="动画时间轴"
+        >
+          <div class="tl-content" id="timelineContent"></div>
+        </div>
+        <div class="timeline-footer">
+          <span id="selectionInfo">选择元素 / 通道</span
+          ><span>滚轮缩放 · Shift 滚轮平移 · [ / ] 跳关键帧</span>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span
+        ><span class="dot">●</span
+        ><span id="engineStatus">INITIALIZING</span></span
+      ><span
+        >JSON CONFIG v3 · QUATERNION ROTATION · STATIC ASSETS · DYNAMIC
+        BACKGROUND</span
+      ><span id="frameInfo">FRAME 000</span>
+    </footer>
+    <div id="loadNotice" class="toast">
+      正在加载 static 资源… 请通过 HTTP 服务打开本页（npm start），不要直接双击
+      HTML。
+    </div>
+    <audio id="editorBgm" src="static/bgm.m4a" preload="metadata"></audio
+    ><input
+      type="file"
+      id="fileInput"
+      accept=".json,application/json"
+      hidden
+    /><input
+      type="file"
+      id="svgInput"
+      accept=".svg,image/svg+xml"
+      hidden
+    /><input type="file" id="fontInput" accept=".otf,.ttf" hidden />
+    <div id="toast" class="toast" hidden></div>
+    <div class="modal" id="jsonModal" hidden>
+      <div class="dialog">
+        <div class="dialog-head">
+          <strong>项目 JSON</strong><button data-close="jsonModal">✕</button>
+        </div>
+        <div class="dialog-body">
+          <textarea
+            id="jsonText"
+            spellcheck="false"
+            aria-label="项目 JSON 编辑器"
+          ></textarea>
+          <p id="errorBox"></p>
+        </div>
+        <div class="dialog-foot">
+          <p>
+            包含所有元素、可见区间、材质和运动关键帧。应用前会校验，不会执行任何脚本。
+          </p>
+          <div class="buttons">
+            <button data-close="jsonModal">取消</button
+            ><button id="applyJson" class="primary">校验并应用</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="helpModal" hidden>
+      <div class="dialog">
+        <div class="dialog-head">
+          <strong>从一个关键帧开始</strong
+          ><button data-close="helpModal">✕</button>
+        </div>
+        <div class="dialog-body">
+          <div class="inline-note" style="margin-bottom: 15px">
+            支点与公转示例：<button data-example="flip">底边翻入</button>
+            <button data-example="orbit">父级公转 + 自身反向旋转</button>
+            <p class="help">
+              载入示例会替换当前工程；有确认提示，可撤销。金点是自身支点，蓝菱形是父级中心；蓝线为模型原点的实际运动轨迹。
+            </p>
+          </div>
+          <div class="inline-note" style="margin-bottom: 15px">
+            <b>主预览与工作区布局</b>
+            <p>
+              在主预览内滚轮以鼠标位置为中心缩放，中键拖动画面；点击主预览右上角的百分比恢复适合窗口。拖动预览与时间轴之间的横线调整高度，双击复位。右侧属性栏标题的箭头可收起或展开；左上角“全屏”可全屏整个编辑器。这些操作不改变工程或视频输出。
+            </p>
+          </div>
+          <div class="inline-note" style="margin-bottom: 15px">
+            <b>右侧自由 3D 视图</b>
+            <p>
+              中键环绕、Shift＋中键平移、滚轮缩放。鼠标放在右视图后，G/R/S
+              进入移动/旋转/缩放，X/Y/Z
+              限轴（重复按切局部），输入数字后回车或左键确认，Esc/右键取消。小键盘
+              1/3/7 切正/右/顶视图，5 切投影，0
+              看正式相机角度，小数点聚焦选中，Home
+              聚焦全部。导航不修改正式相机。右上角 ✕ 可关闭，用顶部“3D
+              视图”恢复。支持这些常用 Blender 快捷键，不是完整 Blender
+              键位实现。
+            </p>
+          </div>
+          <div class="help-grid">
+            <article>
+              <h3>01 / 选择与定位</h3>
+              <p>
+                在时间轴选择元素，点击时间轴空白处定位。播放区 ‹◆ / ◆› 或快捷键
+                [ / ] 跳到上一 /
+                下一关键帧：选中单个通道时仅在该通道跳转，没有更多帧则保持不动；选中元素总轨道时遍历元素全部通道。时间轴轨道区域滚轮缩放（鼠标指向时间不变）；Shift
+                +
+                滚轮水平平移，左侧轨道名称区域滚轮上下滚动。展开轨道查看各个通道。点击预览中的模型也可选中。元素只在入点与出点之间显示。
+              </p>
+            </article>
+            <article>
+              <h3>02 / Blender 风格旋转圆环</h3>
+              <p>
+                选中对象后直接拖动红 X、绿 Y、蓝 Z
+                圆环。默认局部轴随对象转动，局部 Z
+                是文字正面法向；切到世界轴可沿固定方向转动。鼠标松开记录完整四元数姿态关键帧，Esc
+                取消。支持 1° / 5° / 15° 等角度吸附。G / R / S 切换双视图工具，L
+                切换局部与世界。父级中心仍可调整，既有自身支点配置继续生效。
+              </p>
+            </article>
+            <article>
+              <h3>03 / 文字与材质</h3>
+              <p>
+                内容、字号、字距、厚度、倒角、颜色、金属度、粗糙度为全片静态属性；运动、不透明度与揭示进度支持关键帧。通过
+                static URL 加载常用简体中文字体；缺字时可导入自己的 OTF / TTF。
+              </p>
+            </article>
+            <article>
+              <h3>04 / 关键帧插值</h3>
+              <p>
+                元素总轨道的菱形包含同一时刻全部通道，删除会一并删除；展开后选择单通道菱形则只删除该通道。选中菱形后，可精确填写时间、数值和缓动。缓动作用于本帧到下一帧的区间。“保持”会在下一帧跳变。对象与父级旋转统一采用四元数
+                SLERP 插值，可以通过 XYZ
+                角度输入框或手柄编辑姿态。完整一圈需要中间姿态帧，“添加一圈公转”会自动创建。相机仍使用原来的数值旋转。
+              </p>
+            </article>
+            <article>
+              <h3>05 / 保存与恢复</h3>
+              <p>
+                编辑后自动保存至当前浏览器，也可点击“保存参数”立即保存。清理站点数据或更换设备会失去本地缓存；重要工程可在
+                JSON 面板复制内容另存。Ctrl / ⌘ Z 撤销，Shift Z 重做。
+              </p>
+            </article>
+            <article>
+              <h3>06 / 参考与视频输出</h3>
+              <p>
+                参考视频与时间轴同步；超过原片长度时停在末尾。共用工具栏的“显示选项”控制参考、网格和辅助物，不改变正式视频输出。参考复刻仍为近似，编辑器便于继续调校，不代表已与原片完全一致。
+              </p>
+            </article>
+          </div>
+          <div class="form-section" style="margin-top: 18px">
+            <h3>项目设置</h3>
+            <div
+              style="
+                display: flex;
+                gap: 15px;
+                align-items: end;
+                flex-wrap: wrap;
+              "
+            >
+              <label
+                >项目名称<br /><input
+                  id="settingsName"
+                  style="width: 250px" /></label
+              ><label
+                >时长 / 秒<br /><input
+                  id="settingsDuration"
+                  type="number"
+                  min=".1"
+                  max="300"
+                  step=".01"
+                  style="width: 100px" /></label
+              ><label
+                >FPS<br /><input
+                  id="settingsFps"
+                  type="number"
+                  min="1"
+                  max="120"
+                  style="width: 80px" /></label
+              ><button id="applySettings">应用设置</button
+              ><button id="reset" class="danger">恢复初始工程</button>
+            </div>
+            <p class="help" style="margin-top: 8px">
+              缩短时长不得截断已有关键帧；请先调整轨道。字体、灯光和相机设置也可通过
+              JSON 修改。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="static/window-controls.js"></script>
+    <script type="module" src="static/bootstrap.js"></script>
+    <input
+      id="imageInput"
+      type="file"
+      accept="image/png,image/jpeg,image/webp"
+      hidden
+    />
+    <input
+      id="audioInput"
+      type="file"
+      accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.flac"
+      hidden
+    />
+  </body>
+</html>

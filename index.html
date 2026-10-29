@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CCTV新闻联播片头模拟器</title>
+    <link rel="stylesheet" href="static/generator.css" />
+    <link rel="stylesheet" href="static/remixicon/remixicon.css" />
+    <link rel="stylesheet" href="static/window-controls.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("motion-editor-theme") ||
+          (matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+  </head>
+  <body>
+    <header data-host-drag>
+      <span class="page-title">CCTV新闻联播片头模拟器</span>
+      <nav data-host-no-drag>
+        <button id="advancedEditor">
+          <i class="ri-edit-box-line" aria-hidden="true"></i> 高级编辑</button
+        ><button id="export" class="primary" disabled>
+          <i class="ri-movie-line" aria-hidden="true"></i> 生成视频
+        </button>
+      </nav>
+      <div class="window-controls" role="group" aria-label="窗口控制" data-host-no-drag>
+        <button
+          type="button"
+          data-window-action="minimize"
+          data-host-action="minimize"
+          aria-label="最小化"
+          title="最小化"
+        >
+          <i class="ri-subtract-line" aria-hidden="true"></i></button
+        ><button
+          type="button"
+          data-window-action="maximize"
+          data-host-action="toggleMaximize"
+          aria-label="最大化"
+          title="最大化"
+        >
+          <i class="ri-checkbox-blank-line" aria-hidden="true"></i></button
+        ><button
+          type="button"
+          data-window-action="close"
+          data-host-action="close"
+          aria-label="关闭"
+          title="关闭"
+        >
+          <i class="ri-close-line" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+    <main>
+      <aside class="settings-panel">
+        <div class="panel-heading">
+          <strong>参数</strong
+          ><button
+            id="themeToggle"
+            class="icon-button"
+            aria-label="切换亮暗主题"
+            title="切换亮暗主题"
+          ></button>
+        </div>
+        <section class="panel-section">
+          <h2>文字</h2>
+          <div id="textFields">正在加载…</div>
+        </section>
+        <section class="panel-section">
+          <h2>分辨率</h2>
+          <div class="resolution-options" role="group" aria-label="导出分辨率">
+            <button data-resolution="720" aria-pressed="false">
+              <strong>720p</strong><small>1280 × 720</small></button
+            ><button data-resolution="1080" class="active" aria-pressed="true">
+              <strong>1080p</strong><small>1920 × 1080</small></button
+            ><button data-resolution="1440" aria-pressed="false">
+              <strong>2K</strong><small>2560 × 1440</small></button
+            ><button data-resolution="2160" aria-pressed="false">
+              <strong>4K</strong><small>3840 × 2160</small>
+            </button>
+          </div>
+          <p id="capability" class="muted">检测编码能力…</p>
+        </section>
+        <details class="panel-details">
+          <summary>音频</summary>
+          <div id="generatorAudioTrack" class="audio-track-card">
+            <div class="audio-top">
+              <button
+                id="audioEye"
+                class="icon-button"
+                title="参与输出"
+                aria-label="音轨参与输出"
+              ></button>
+              <div class="audio-track-name">
+                <strong id="audioName">背景音乐</strong
+                ><small id="audioRange"></small>
+              </div>
+            </div>
+            <div class="asset-actions">
+              <button id="replaceAudio">替换音频</button
+              ><button id="resetAudio">恢复默认</button>
+            </div>
+          </div>
+        </details>
+        <details class="panel-details">
+          <summary>更多设置</summary>
+          <label class="check"
+            ><input
+              id="background"
+              type="checkbox"
+              checked
+            />背景参与输出</label
+          ><label class="check"
+            ><input id="fullBackground" type="checkbox" />原生分辨率背景</label
+          >
+          <div class="asset-actions">
+            <button id="importFont">导入字体</button
+            ><button id="importProject">载入参数</button
+            ><button id="restoreDefault">恢复默认</button>
+          </div>
+          <p id="templateInfo" class="muted"></p>
+        </details>
+        <div id="cacheStatus" class="cache-status" role="status">
+          正在读取参数…
+        </div>
+      </aside>
+      <section class="workspace">
+        <div class="preview-shell">
+          <div class="canvas-frame" id="previewFrame">
+            <canvas id="previewCanvas"></canvas>
+            <div class="loading" id="loading">正在加载…</div>
+          </div>
+          <div class="transport">
+            <button id="play" class="icon-button" aria-label="播放预览">
+              <i class="ri-play-fill" aria-hidden="true"></i></button
+            ><input
+              id="seek"
+              type="range"
+              min="0"
+              max="18.916667"
+              step="0.041667"
+              value="0"
+              aria-label="预览时间"
+            /><span id="timecode">00.000</span>
+          </div>
+        </div>
+        <div class="render-status">
+          <div id="progressPanel" hidden>
+            <div class="progress-header">
+              <strong id="progressLabel">准备生成…</strong
+              ><button id="cancel">取消</button>
+            </div>
+            <progress id="progress" value="0" max="1"></progress>
+            <div class="progress-meta">
+              <span id="progressStats"></span><span id="progressEta"></span>
+            </div>
+          </div>
+          <div id="result" hidden>
+            <span id="resultText"></span><button id="download">保存视频</button>
+          </div>
+          <div id="message" role="status" hidden></div>
+        </div>
+      </section>
+    </main>
+    <dialog id="saveDialog" aria-labelledby="saveTitle">
+      <div class="save-dialog-head">
+        <h2 id="saveTitle">视频已生成</h2>
+        <button id="closeSaveDialog" class="icon-button" aria-label="关闭">
+          <i class="ri-close-line" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p id="saveMessage" role="status">正在打开保存窗口…</p>
+      <div class="dialog-actions">
+        <button id="browserDownload" hidden>浏览器下载</button
+        ><button id="saveVideo" class="primary">保存视频</button>
+      </div>
+    </dialog>
+    <input
+      id="projectFile"
+      type="file"
+      accept=".json,application/json"
+      hidden
+    /><input id="fontFile" type="file" accept=".otf,.ttf" hidden /><input
+      id="audioFile"
+      type="file"
+      accept="audio/*,.mp3,.wav,.m4a,.ogg,.flac"
+      hidden
+    /><audio id="bgm" src="static/bgm.m4a" preload="metadata"></audio>
+    <script type="module" src="static/window-controls.js"></script>
+    <script type="module" src="static/generator-bootstrap.js"></script>
+  </body>
+</html>
